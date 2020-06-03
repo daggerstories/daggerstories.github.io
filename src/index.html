@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dagger Stories</title>
-    <meta name="description" content="Platform-agnostic, non-fiction storytelling. Dagger Stories makes documentaries, reports from the field and manages productions. In addition to developing and running projects, we provide loan-outs for directing, producing, research and development services.">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
 
     <link rel="canonical" href="https://www.daggerstories.com/" />
 
     <link rel="shortcut icon" href="dist/favicon.ico">
 
-    <link rel="stylesheet" href="https://use.typekit.net/tjo7hjt.css">
-  <link href="dist/main.f8027e04fb2adb2cc9ca.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="https://use.typekit.net/<%= htmlWebpackPlugin.options.typekitId %>.css">
+  </head>
 
   <body class="loading">
     <nav>
@@ -244,17 +244,17 @@
 
     <footer class="page-footer">
       <p class="copyright-notice">
-        &copy; 2020 Dagger Stories Inc.
+        &copy; <%= htmlWebpackPlugin.options.currentYear %> Dagger Stories Inc.
       </p>
     </footer>
 
     <script>
-      var _gaq=[['_setAccount','UA-168355220-1'],['_trackPageview']];
+      var _gaq=[['_setAccount','<%= htmlWebpackPlugin.options.gaId %>'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
 
     <script src="https://player.vimeo.com/api/player.js"></script>
-  <script type="text/javascript" src="dist/main.9d4e31a8db6f41341df2.js"></script></body>
+  </body>
 </html>
