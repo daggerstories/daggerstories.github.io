@@ -1,0 +1,269 @@
+@import-normalize;
+
+:root {
+  --body-font-family: ballinger, sans-serif;
+  --body-font-size-small: 16px;
+  --body-line-height-small: 20px;
+  --body-font-size-med: 24px;
+  --body-line-height-med: 32px;
+  --body-font-size-large: 28px;
+  --body-line-height-large: 36px;
+
+  --theme-text-rgb-values: 230, 230, 230;
+  --theme-text: rgb(var(--theme-text-rgb-values));
+  --theme-background: #161616;
+}
+
+html {
+	scroll-behavior: smooth;
+  font-size: 62.5%;
+  font-weight: 300;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  max-width: 35em;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: var(--theme-background);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-small);
+  line-height: var(--body-line-height-small);
+  color: var(--theme-text);
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, img {
+  margin: var(--body-line-height-small) 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-weight: 500;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Visually hide while allowing to be read by screenreaders and robots */
+.loading .page-header,
+.loading .page-main,
+.loading .video-wrapper,
+.loading .page-footer {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+a {
+  color: var(--theme-text);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--theme-text);
+}
+
+a:hover,
+a:focus,
+a:visited:hover,
+a:visited:focus {
+  color: var(--theme-text);
+  text-decoration: underline dotted;
+}
+
+.video-wrapper {
+  position: relative;
+  flex: 0 1;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.video-hide {
+  display: none;
+}
+
+.video-wrapper--is-visible .video-show {
+  display: none;
+}
+
+/*
+.video-wrapper--is-visible .video-hide {
+  display: block;
+  position: absolute;
+  top: -40px;
+  right: 10px;
+  padding: 30px;
+}
+*/
+
+.sr-only {
+ 	position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.video-show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  border: 0;
+  background: transparent;
+  width: 100px;
+  height: 120px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.video-show::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 100px solid rgba(var(--theme-text-rgb-values), .5);
+}
+
+.video-show:hover::after,
+.video-show:focus::after {
+  border-left-color: var(--theme-text);
+}
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--theme-background);
+  text-align: center;
+}
+
+.nav-links-wrapper {
+  margin: 0 auto;
+  max-width: 35em;
+}
+
+.nav-links {
+  margin: 0 -20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 20px 10px;
+  font-weight: 300;
+  opacity: .7;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.page-header,
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.page-header {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.page-title {
+  margin: 0 auto;
+}
+
+.dagger-stories-logo {
+  width: 672px;
+  height: auto;
+  max-width: 100%;
+}
+
+.page-footer {
+  text-align: center;
+}
+
+.contact {
+  margin: 50px;
+  text-align: center;
+}
+
+.copyright-notice {
+  margin-top: 100px;
+  opacity: .8;
+  font-size: 18px;
+}
+
+@media (min-width: 620px) {
+  nav a {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  body {
+    font-size: var(--body-font-size-med);
+    line-height: var(--body-line-height-med);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: var(--body-line-height-med) 0;
+  }
+
+  section {
+    min-height: 100vh;
+  }
+
+  .page-title {
+    max-width: 60%;
+  }
+
+  .video-wrapper {
+    max-width: 80%;
+  }
+
+  nav a {
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1800px) {
+  body {
+    font-size: var(--body-font-size-large);
+    line-height: var(--body-line-height-large);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: var(--body-line-height-large) 0;
+  }
+}
