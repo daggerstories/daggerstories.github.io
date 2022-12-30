@@ -16,17 +16,17 @@
   "devDependencies": {
     "autoprefixer": "^9.5.0",
     "clean-webpack-plugin": "^2.0.1",
-    "css-loader": "^2.1.1",
-    "file-loader": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "^3.0.0",
+    "postcss-loader": "^7.0.2",
     "postcss-normalize": "^7.0.1",
-    "style-loader": "^0.23.1",
+    "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^1.2.3",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "plyr": "^3.6.2"
