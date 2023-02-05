@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git@github.com:daggerstories/daggerstories.github.io.git"
   },
-  "author": "Not A Robot A Real Human Dev Inc.",
+  "author": "Dagger Stories",
   "license": "none",
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.1",

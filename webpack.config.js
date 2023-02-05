@@ -21,6 +21,12 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
+    static: {
+      directory: __dirname,
+    },
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   optimization: {
     minimize: true,
