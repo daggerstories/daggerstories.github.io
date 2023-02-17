@@ -1,7 +1,6 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const { resolve } = require("path");
-const { readFileSync } = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -9,16 +8,12 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const postcssNormalize = require("postcss-normalize");
 const Handlebars = require("handlebars");
-const { optimize: optimizeSvg } = require("svgo");
+const loadPartials = require("./lib/load-partials");
 
 const isProduction = process.env.NODE_ENV == "production";
 
-const PARTIALS = {
-  daggerStoriesLogoWhite: optimizeSvg(
-    readFileSync(resolve(__dirname, "./src/images/dagger-stories-logo-white.svg"), "utf-8"),
-    { path: "dagger-stories-logo-white.svg" }
-  ).data,
-};
+const partialsPath = "./src/partials/";
+const PARTIALS = loadPartials(resolve(__dirname, partialsPath));
 
 const TEMPLATE_VALUES = {
   title: "Dagger Stories",
@@ -59,8 +54,6 @@ const config = {
 
             try {
               Object.entries(PARTIALS).forEach(([name, partial]) => {
-                console.log({name: name})
-                console.log({partial: partial})
                 Handlebars.registerPartial(name, partial);
               });
 
