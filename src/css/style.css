@@ -50,8 +50,8 @@ img {
 /* Visually hide while allowing to be read by screenreaders and robots */
 .loading .page-header,
 .loading .page-main,
-.loading .video-wrapper,
-.loading .page-footer {
+.loading .page-footer,
+.video-modal {
   position: absolute;
   top: auto;
   left: -10000px;
@@ -76,30 +76,33 @@ a:visited:focus {
   text-decoration: underline dotted;
 }
 
-.video-wrapper {
+.header-video-show-wrapper {
   position: relative;
   flex: 0 1;
   width: 100%;
+  margin: 1em auto;
+}
+
+.video-player-wrapper {
   margin: 0 auto;
 }
 
+.video-modal--is-visible {
+  position: fixed;
+  flex: 0 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .video-hide {
-  display: none;
 }
-
-.video-wrapper--is-visible .video-show {
-  display: none;
-}
-
-/*
-.video-wrapper--is-visible .video-hide {
-  display: block;
-  position: absolute;
-  top: -40px;
-  right: 10px;
-  padding: 30px;
-}
-*/
 
 .sr-only {
  	position: absolute;
@@ -113,7 +116,15 @@ a:visited:focus {
   border-width: 0;
 }
 
-.video-show {
+.thumbnail-video-show {
+  display: block;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+.header-video-show {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,7 +138,7 @@ a:visited:focus {
   z-index: 100;
 }
 
-.video-show::after {
+.header-video-show::after {
   content: '';
   display: block;
   width: 0;
@@ -142,8 +153,8 @@ a:visited:focus {
   border-left: 100px solid rgba(var(--theme-text-rgb-values), .5);
 }
 
-.video-show:hover::after,
-.video-show:focus::after {
+.header-video-show:hover::after,
+.header-video-show:focus::after {
   border-left-color: var(--theme-text);
 }
 
@@ -153,7 +164,7 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 500;
   background-color: var(--theme-background);
   text-align: center;
 }
@@ -276,7 +287,8 @@ section {
     max-width: 60%;
   }
 
-  .video-wrapper {
+  .video-player-wrapper,
+  .header-video-show-wrapper {
     max-width: 80%;
   }
 

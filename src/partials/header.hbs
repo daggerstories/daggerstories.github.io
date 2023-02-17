@@ -1,0 +1,44 @@
+<header
+  id="home"
+  class="page-header"
+  role="banner"
+>
+  <h1 class="page-title">
+    {{> dagger-stories-logo-white}}
+  </h1>
+
+  <div
+    class="header-video-show-wrapper"
+  >
+    <button
+      class="header-video-show"
+      type="button"
+      data-video-src="https://player.vimeo.com/video/425366804?title=0&byline=0&portrait=0&logo=0" 
+    >
+      <span class="sr-only">
+        Watch our reel
+      </span>
+    </button>
+  </div>
+
+  <div
+    class="video-modal"
+    id="video-modal"
+    tabindex="-1"
+  >
+    <button
+      class="video-hide"
+      id="video-hide"
+    >
+      Close
+    </button>
+
+    <div
+      class="video-player-wrapper"
+      style="padding:56.25% 0 0 0;position:relative;"
+      id="video-player-wrapper"
+    >
+      <iframe id="video-player" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</header>

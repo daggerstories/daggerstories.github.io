@@ -1,157 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{{title}}</title>
-    <meta name="description" content="{{description}}">
-
-    <link rel="canonical" href="https://www.daggerstories.com/" />
-
-    <link rel="shortcut icon" href="./favicon.ico">
-
-    <link rel="stylesheet" href="https://use.typekit.net/{{typekitId}}.css">
+    {{> head}}
   </head>
 
   <body class="loading">
-    <nav>
-      <div class="nav-links-wrapper">
-        <div class="nav-links">
-          <a href="#home">
-            Home
-          </a>
+    {{> nav}}
 
-          <a href="#services">
-            Services
-          </a>
-
-          <a href="#about">
-            About
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-        </div>
-      </div>
-    </nav>
-
-    <header
-      id="home"
-      class="page-header"
-      role="banner"
-    >
-      <h1 class="page-title">
-        {{> daggerStoriesLogoWhite}}
-      </h1>
-
-      <div
-        class="video-wrapper"
-        id="video-wrapper"
-      >
-        <button
-          class="video-show"
-          id="video-show"
-          type="button"
-        >
-          <span class="sr-only">
-            Watch our reel
-          </span>
-        </button>
-
-        <button
-          class="video-hide"
-          id="video-hide"
-        >
-          Close
-        </button>
-
-        <div
-          style="padding:56.25% 0 0 0;position:relative;"
-          id="video-player-wrapper"
-        >
-          <iframe id="video-player" src="https://player.vimeo.com/video/425366804?title=0&byline=0&portrait=0&logo=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
-      </div>
-    </header>
+    {{> header}}
 
     <main class="page-main" role="main">
-      <section
-        id="services"
-      >
-        <div class="section-inner">
-          <h1>Services</h1>
+      {{> services}}
 
-          <p>
-            Platform-agnostic, non-fiction storytelling.
-          </p>
+      {{> our-work}}
 
-          <p>
-            Dagger Stories makes documentaries, reports from the field and manages productions. In addition to developing and running projects, I provide loan-outs for directing, producing, research and development services.
-          </p>
-
-          <p>
-            Let’s cut through the shit and build new narratives together.
-          </p>
-        </div>
-      </section>
-
-      <section
-        id="about"
-      >
-        <div class="section-inner">
-          <h1>About</h1>
-
-          <div class="headshot">
-            <img
-              src="images/dagna-gallinger.jpg"
-              alt="Dagna Gallinger"
-            >
-          </div>
-
-          <p>
-            Hi, I’m Dagna Gallinger. I’m a director and producer.
-          </p>
-
-          <p>
-            I’ve spent most of my career working behind the scenes, for places like VICE, CBC and CTV. I made sure current-affairs shows ran like clockwork, producing moments that make you laugh, cry and think.
-          </p>
-
-          <p>
-            I also take ideas and run with them. Over the years I’ve helped create shows and one-offs. My work has been broadcast in over 15 countries and has taken me to Mexico, Honduras, Russia, Israel, the Palestinian Territories, the United States, Canada and across Europe.
-          </p>
-
-          <p>
-            Now I develop my own projects from scratch in collaboration with subject insiders and high-calibre creatives. I am looking for original stories, to innovate and to find new narratives.
-          </p>
-
-          <p>
-            My work has been featured on outlets including Paramount Plus, Amazon Prime, Hulu, Apple TV, Channel 4, National Geographic Latinoamérica, Canal+, CBC Gem, Investigation Discovery, SBS On Demand and many more.
-          </p>
-
-          <p
-            id="contact"
-            class="contact"
-          >
-            <a href="mailto:dagna@daggerstories.com">
-              Have a story to tell?
-
-              <strong>
-                Get in touch!
-              </strong>
-            </a>
-          </p>
-        </div>
-      </section>
+      {{> about}}
     </main>
 
-    <footer class="page-footer">
-      <p class="copyright-notice">
-        &copy; {{currentYear}} Dagger Stories Inc.
-      </p>
-    </footer>
+    {{> footer}}
 
     <script>
       var _gaq=[['_setAccount','{{gaId}}'],['_trackPageview']];
