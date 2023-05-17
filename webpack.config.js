@@ -53,8 +53,10 @@ const config = {
             let result;
 
             try {
-              Object.entries(PARTIALS).forEach(([name, partial]) => {
+              Object.entries(PARTIALS).forEach(([name, { filePath, partial }]) => {
                 Handlebars.registerPartial(name, partial);
+
+                loaderContext.addDependency(filePath);
               });
 
               result = Handlebars.compile(content)(TEMPLATE_VALUES);

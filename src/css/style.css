@@ -116,12 +116,27 @@ a:visited:focus {
   border-width: 0;
 }
 
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .thumbnail-video-show {
   display: block;
   border: 0;
-  background: transparent;
+  background: rgba(255, 255, 255, .3);
   width: 100%;
   cursor: pointer;
+}
+
+@media (min-width: 620px) {
+  .thumbnail-video-show {
+    width: 32%;
+    margin-right: auto;
+  }
+  .thumbnail-video-show:nth-child(3) {
+    margin-right: 0;
+  }
 }
 
 .header-video-show {
