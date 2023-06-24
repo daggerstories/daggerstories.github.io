@@ -10,7 +10,7 @@ window.onload = function() {
   const videoHideButtonEl = document.getElementById("video-hide");
 
   function onCloseVideoPlayer() {
-    videoPlayerEl.setAttribute('src', '');
+    videoPlayerEl.setAttribute("src", "");
     videoModalEl.classList.remove("video-modal--is-visible");
     videoPlayerWrapperEl.removeChild(videoPlayerEl);
 
@@ -26,14 +26,13 @@ window.onload = function() {
   videoPlayerWrapperEl.removeChild(videoPlayerEl);
 
   document.addEventListener("click", function(e) {
-    const target = e.target;
-    const src = target.getAttribute('data-video-src');
+    const src = e.target.closest("[data-video-src]")?.getAttribute("data-video-src");
 
     if (!src) { return; }
 
     document.addEventListener("keydown", onEsc);
 
-    videoPlayerEl.setAttribute('src', src);
+    videoPlayerEl.setAttribute("src", src);
     videoModalEl.classList.add("video-modal--is-visible");
     videoPlayerWrapperEl.appendChild(videoPlayerEl);
     videoPlayerWrapperEl.focus();
