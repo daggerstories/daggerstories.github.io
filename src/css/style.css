@@ -59,7 +59,6 @@ img {
   height: 1px;
   overflow: hidden;
 }
-
 a {
   color: var(--theme-text);
   text-decoration: underline;
@@ -224,16 +223,38 @@ section {
   font-size: 18px;
 }
 
-@media (min-width: 620px) {
-  nav a {
-    padding: 20px;
-    font-size: var(--body-font-size-med);
-  }
+.headshot {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 70%;
+}
+
+.headshot img {
+  margin: -10% 0 0 0;
 }
 
 @media (min-width: 500px) {
   nav a {
     font-size: var(--body-font-size-small);
+  }
+
+  .headshot {
+    overflow: auto;
+    width: 40%;
+    float: left;
+    height: auto;
+    padding: 0 1em 1em 0;
+  }
+
+  .headshot img {
+    margin: 0;
+  }
+}
+
+@media (min-width: 620px) {
+  nav a {
+    padding: 20px;
+    font-size: var(--body-font-size-med);
   }
 }
 
@@ -263,6 +284,10 @@ section {
     padding: 20px 40px;
     font-size: 20px;
   }
+
+  .headshot {
+    padding: 0.3em 1em 1em 0;
+  }
 }
 
 @media (min-width: 1800px) {
@@ -273,5 +298,9 @@ section {
 
   h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: var(--body-line-height-large) 0;
+  }
+
+  .headshot {
+    width: 35%;
   }
 }

@@ -93,9 +93,19 @@ const config = {
         ]
       },
       {
-        test: /\.ico$|\.gif$|\.jpg$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        type: "asset/resource"
+        test: /\.gif$|\.jpg$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        type: "asset/resource",
+        generator : {
+          filename : '[name].[hash][ext][query]',
+        }
       },
+      {
+        test: /\.ico$/,
+        type: "asset/resource",
+        generator : {
+          filename : '[name][ext][query]',
+        }
+      }
     ]
   },
   plugins: [
