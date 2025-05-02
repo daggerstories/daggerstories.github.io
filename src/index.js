@@ -9,7 +9,9 @@ window.onload = function() {
 
   const videoHideButtonEl = document.getElementById("video-hide");
 
-  function onCloseVideoPlayer() {
+  function onCloseVideoPlayer(e) {
+    e.stopPropagation();
+
     videoPlayerEl.setAttribute("src", "");
     videoModalEl.classList.remove("video-modal--is-visible");
     videoPlayerWrapperEl.removeChild(videoPlayerEl);
