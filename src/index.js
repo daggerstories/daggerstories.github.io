@@ -21,7 +21,7 @@ window.onload = function() {
 
   function onEsc(e) {
     if (e.key === "Escape") {
-      onCloseVideoPlayer();
+      onCloseVideoPlayer(e);
     }
   }
 
