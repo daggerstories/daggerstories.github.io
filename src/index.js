@@ -1,6 +1,6 @@
 import "./css/style.css";
 import "./favicon.ico";
-import "./images/dagna-gallinger.jpg";
+import "./images/dagna-maksym.jpg";
 
 window.onload = function() {
   const videoWrapperEl = document.getElementById("video-wrapper");
